@@ -2,6 +2,7 @@
 ## 参照先
 下記の記事を参考に色々と触っております
   - [Embulkでバッチ処理をしてみよう 其の1](https://naokirin.hatenablog.com/entry/2018/12/31/162548)
+  - [EmbulkのfilterプラグインをRubyで開発する話](https://muziyoshiz.hatenablog.com/entry/2015/05/30/174346)
 
 ## Dockerを使用して動作確認コマンド
 ```sh
@@ -74,13 +75,20 @@ $ embulk --help
 # 作業ディレクトリに移動
 $ cd local_sample
 
-# (初回のみ)
-## プラグインテンプレートの作成
+# inputプラグイン
+## (初回のみ)
+### プラグインテンプレートの作成
+$ cd local_sample/embulk-input-example
 $ embulk new ruby-input example
 $ embulk bundle
 
-# サンプルプログラム実行
-## embulk preview -L <プラグインのディレクトリ> example.yml
-$ embulk preview -L '.' example.yml
--- 今回は作成したプラグインがlocal_sample/embulk-input-exampleにあるため、ドットを指定している
+## サンプルプログラム実行
+-- embulk preview -L <プラグインのディレクトリ> example.yml
+$ cd local_sample
+$ embulk preview example.yml -L embulk-input-example
+
+# filterプラグイン
+## filterプラグインのサンプルプログラムの実行
+$ cd local_sample/embulk-filter-myapp
+$ embulk preview config.yml -L embulk-filter-myapp
 ```
