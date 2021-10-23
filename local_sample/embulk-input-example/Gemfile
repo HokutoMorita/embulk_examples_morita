@@ -1,0 +1,7 @@
+source 'https://rubygems.org/'
+
+gem 'embulk', '< 0.10'
+
+gem 'embulk-input-example', path: '.'
+gem 'embulk-output-command'
+gem 'embulk-formatter-fast_jsonl'

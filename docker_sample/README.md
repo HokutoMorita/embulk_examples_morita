@@ -71,5 +71,16 @@ $ embulk --help
 
 ### サンプル実行コマンド
 ```sh
-$ 
+# 作業ディレクトリに移動
+$ cd local_sample
+
+# (初回のみ)
+## プラグインテンプレートの作成
+$ embulk new ruby-input example
+$ embulk bundle
+
+# サンプルプログラム実行
+## embulk preview -L <プラグインのディレクトリ> example.yml
+$ embulk preview -L '.' example.yml
+-- 今回は作成したプラグインがlocal_sample/embulk-input-exampleにあるため、ドットを指定している
 ```
