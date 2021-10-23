@@ -1,6 +1,6 @@
 source 'https://rubygems.org/'
 
-gem 'embulk'
+gem 'embulk', '< 0.10'
 
 gem 'embulk-input-randomj'
 gem 'embulk-output-command'
